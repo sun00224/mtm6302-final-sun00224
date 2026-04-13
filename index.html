@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Random Cat Meme Generator</title>
+  <meta
+    name="description"
+    content="Generate random cat memes instantly with a modern Vanilla JavaScript web app."
+  />
+  <link rel="preconnect" href="https://cataas.com" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <p class="eyebrow">Vanilla JS Final Project</p>
+      <h1>Random Cat Meme Generator</h1>
+      <p class="hero-copy">
+        Tap once, get chaos. Every click pulls in a random cat and a random caption,
+        then turns it into a shareable meme.
+      </p>
+    </header>
+
+    <main class="app-card">
+      <section class="meme-panel" aria-label="Generated meme preview">
+        <div class="meme-stage" id="memeStage">
+          <div class="meme-frame">
+            <img
+              id="catImage"
+              class="cat-image"
+              src=""
+              alt="Random cat meme"
+              crossorigin="anonymous"
+            />
+            <div class="meme-text meme-text-top" id="topCaption"></div>
+            <div class="meme-text meme-text-bottom" id="bottomCaption"></div>
+          </div>
+
+          <div class="loading-overlay hidden" id="loadingState" aria-live="polite">
+            <div class="spinner" aria-hidden="true"></div>
+            <p>Loading fresh cat energy...</p>
+          </div>
+        </div>
+      </section>
+
+      <aside class="control-panel">
+        <div class="control-copy">
+          <h2>Generate a new meme</h2>
+          <p>
+            Each meme uses a random cat image and a random caption pair. Download it
+            when you find one worth keeping.
+          </p>
+        </div>
+
+        <div class="button-group">
+          <button id="generateButton" class="primary-button" type="button">
+            Generate Meme
+          </button>
+          <button id="downloadButton" class="secondary-button" type="button">
+            Download PNG
+          </button>
+        </div>
+
+        <div class="caption-preview">
+          <p class="caption-label">Current caption</p>
+          <p class="caption-line"><span>Top:</span> <span id="topCaptionPreview">—</span></p>
+          <p class="caption-line"><span>Bottom:</span> <span id="bottomCaptionPreview">—</span></p>
+        </div>
+
+        <p class="status-message" id="statusMessage" aria-live="polite">
+          Ready for maximum feline nonsense.
+        </p>
+      </aside>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
